@@ -1,0 +1,25 @@
+# Chromium source and build output
+chromium/
+out/
+
+# Build artifacts
+*.o
+*.obj
+*.so
+*.dylib
+*.exe
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# CPAC output
+dist/
+*.tar.gz

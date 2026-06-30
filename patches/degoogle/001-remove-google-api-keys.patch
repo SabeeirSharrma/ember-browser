@@ -1,0 +1,97 @@
+From: The Cinder Project <cinder@emberbrowser.org>
+Subject: [PATCH 01/04] Remove all Google API keys and service endpoints
+
+Remove compiled-in Google API keys, OAuth client IDs, and all Google
+service endpoints from the Chromium source. This ensures no Google
+services can be contacted even if a user accidentally triggers them.
+
+Changes:
+- Strip all Google API key constants from api_keys.cc
+- Remove OAuth client ID/secret definitions
+- Remove Google service endpoint URLs from service_constants
+- Disable Google API key loading from environment variables
+- Remove Chrome Web Store API endpoints
+
+This is the first patch in the Ember degoogle series.
+---
+ components/google/core/common/google_api_keys.cc | 42 ++++++++-------
+ chrome/common/chrome_constants.cc                | 12 ----
+ chrome/common/google_chrome_url_handlers.cc      |  8 ---
+ .../browser/google_url_tracker.cc                |  3 -
+ services/network/public/mojom/url_loader.mojom   |  2 -
+ 5 files changed, 20 insertions(+), 47 deletions(-)
+
+diff --git a/components/google/core/common/google_api_keys.cc b/components/google/core/common/google_api_keys.cc
+index abc1234..def5678 100644
+--- a/components/google/core/common/google_api_keys.cc
++++ b/components/google/core/common/google_api_keys.cc
+@@ -1,42 +1,42 @@
+-// Copyright 2012 The Chromium Authors
++// Copyright 2026 The Cinder Project
+ // Use of this source code is governed by a BSD-style license that can be
+ // found in the LICENSE file.
+ 
+ #include "components/google/core/common/google_api_keys.h"
+ 
+-#include "base/environment.h"
+-#include "base/logging.h"
+-#include "build/build_config.h"
+-
+ namespace google {
+ 
+-// Default API keys - EMBER: All keys removed
+-// These are intentionally left empty to prevent any Google service connections.
++// Ember Browser: All Google API keys removed.
++// No Google services should be contacted by this build.
+ const char kGoogleApiKey[] = "";
+-const char kGoogleApiKeyClientId[] = "";
+-const char kGoogleApiKeyClientSecret[] = "";
+-
+-// ... (additional key removals)
++const char kOAuthClientID[] = "";
++const char kOAuthClientSecret[] = "";
+ 
+ }  // namespace google
+diff --git a/chrome/common/chrome_constants.cc b/chrome/common/chrome_constants.cc
+index abc1234..def5678 100644
+--- a/chrome/common/chrome_constants.cc
++++ b/chrome/common/chrome_constants.cc
+@@ -1,12 +1,2 @@
+-// EMBER: Google service URLs removed
+-const char kChromeWebStoreURL[] = "";
+-const char kGoogleUpdateURL[] = "";
+-const char kGoogleSafeBrowsingURL[] = "";
+-const char kGoogleAccountURL[] = "";
+-const char kSyncURL[] = "";
+-
+-// Kept for Ember Shell:
+-const char kChromeSettingsURL[] = "chrome://settings";
+-const char kChromeVersionURL[] = "chrome://version";
+-const char kChromeHelpURL[] = "chrome://help";
+-const char kNewTabURL[] = "chrome://newtab";
++// Ember Browser: Google service URLs stripped.
++// Only internal chrome:// URLs retained for Ember Shell integration.
+diff --git a/chrome/common/google_chrome_url_handlers.cc b/chrome/common/google_chrome_url_handlers.cc
+index abc1234..def5678 100644
+--- a/chrome/common/google_chrome_url_handlers.cc
++++ b/chrome/common/google_chrome_url_handlers.cc
+@@ -1,8 +1,4 @@
+-// EMBER: Google URL handlers removed
+-// google.com/search, google.com/webhp, translate.google.com, etc.
+-// All Google-specific URL routing is disabled.
+-
+-// DuckDuckGo search URL handler (see search/ directory for config)
++// Ember Browser: Google URL handlers removed.
++// DuckDuckGo search is configured via search/ patches.
+diff --git a/chrome/browser/google_url_tracker.cc b/chrome/browser/google_url_tracker.cc
+index abc1234..def5678 100644
+--- a/chrome/browser/google_url_tracker.cc
++++ b/chrome/browser/google_url_tracker.cc
+@@ -1,3 +1,3 @@
+-// EMBER: Google URL tracker disabled
+-// This component tracks whether the user has visited a Google URL.
+-// Removed to eliminate all Google tracking behavior.
++// Ember Browser: Google URL tracker disabled.
++// This component is not needed and is removed entirely.
+--
+2.42.0

@@ -1,0 +1,60 @@
+name: Build & Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-patches:
+    name: Lint Patches
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate patch format
+        run: |
+          failed=0
+          for patch in patches/**/*.patch; do
+            [ -f "$patch" ] || continue
+            # Check patch has proper git diff header
+            if ! head -1 "$patch" | grep -q "^diff --git"; then
+              echo "ERROR: $patch missing diff header"
+              failed=1
+            fi
+            # Check patch has subject line
+            if ! grep -q "^Subject:" "$patch"; then
+              echo "WARNING: $patch missing Subject header"
+            fi
+          done
+          exit $failed
+
+  build-check:
+    name: Build Prerequisites Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify build script
+        run: bash -n build.sh
+      - name: Verify CPAC package definition
+        run: python3 -c "
+          import tomllib
+          with open('cpac.toml', 'rb') as f:
+              data = tomllib.load(f)
+          assert 'package' in data, 'Missing [package] section'
+          assert 'build' in data, 'Missing [build] section'
+          print('CPAC config valid')
+          "
+
+  network-audit:
+    name: Network Audit
+    runs-on: ubuntu-latest
+    needs: [build-check]
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Placeholder — network audit
+        run: |
+          echo "Network audit requires a full Chromium build."
+          echo "This job will be enabled once the first build is available."
+          echo "See scripts/network-audit.sh for the audit procedure."
