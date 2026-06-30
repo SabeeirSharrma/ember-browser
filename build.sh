@@ -43,6 +43,7 @@ GN_ARGS=(
     'enable_nacl=false'
     'use_sysroot=true'
     'use_goma=false'
+    'use_siso=false'
     'is_clang=true'
     'use_lld=true'
     'dcheck_always_on=false'
