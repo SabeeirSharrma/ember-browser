@@ -1,6 +1,6 @@
 # Ember Browser
 
-A privacy-focused, fully customizable Chromium-based browser. Part of [The Cinder Project](https://github.com/SabeeirSharrma).
+A privacy-focused, fully customizable Chromium-based browser. Part of [The Cinder Project](https://thecinderproject.qd.je/).
 
 **Status:** v0.1 — Bare Metal (in development)
 
@@ -84,7 +84,7 @@ ember-browser/
 |---|---|
 | [CinderBlock](https://github.com/SabeeirSharrma/CinderBlock) | Content blocking engine (uBlock fork) |
 | [Coalbox](https://github.com/SabeeirSharrma/coalbox) | Local-first password manager |
-| CPAC | Build verification and distribution (planned) |
+| CPAC | Build verification and distribution |
 | CinderOS | Arch-based Linux distro with Ember (planned) |
 
 ## License
