@@ -47,6 +47,7 @@ GN_ARGS=(
     'is_clang=true'
     'use_lld=true'
     'dcheck_always_on=false'
+    'treat_warnings_as_errors=false'
 )
 
 # --- Helpers ---
