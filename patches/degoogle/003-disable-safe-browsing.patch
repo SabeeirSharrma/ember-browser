@@ -1,0 +1,96 @@
+diff --git a/components/safe_browsing/content/browser/client_side_detection_service.cc b/components/safe_browsing/content/browser/client_side_detection_service.cc
+index d81a9e30fb..ff7b8c3256 100644
+--- a/components/safe_browsing/content/browser/client_side_detection_service.cc
++++ b/components/safe_browsing/content/browser/client_side_detection_service.cc
+@@ -67,8 +67,8 @@ const int ClientSideDetectionService::kMaxReportsPerInterval = 3;
+ const int ClientSideDetectionService::kNegativeCacheIntervalDays = 1;
+ const int ClientSideDetectionService::kPositiveCacheIntervalMinutes = 30;
+ 
+-const char ClientSideDetectionService::kClientReportPhishingUrl[] =
+-    "https://sb-ssl.google.com/safebrowsing/clientreport/phishing";
++// Ember Browser: Safe Browsing client-side phishing detection disabled.
++const char ClientSideDetectionService::kClientReportPhishingUrl[] = "";
+ 
+ struct ClientSideDetectionService::ClientPhishingReportInfo {
+   std::unique_ptr<network::SimpleURLLoader> loader;
+diff --git a/components/safe_browsing/core/browser/db/v4_protocol_manager_util.cc b/components/safe_browsing/core/browser/db/v4_protocol_manager_util.cc
+index 56f2d3d56c..e7c38a5f8c 100644
+--- a/components/safe_browsing/core/browser/db/v4_protocol_manager_util.cc
++++ b/components/safe_browsing/core/browser/db/v4_protocol_manager_util.cc
+@@ -33,16 +33,15 @@ namespace safe_browsing {
+ // Can be overriden by tests.
+ const char* g_sbv4_url_prefix_for_testing = nullptr;
+ 
+-const char kSbV4UrlPrefix[] = "https://safebrowsing.googleapis.com/v4";
++const char kSbV4UrlPrefix[] = "";
+ 
+ const base::FilePath::CharType kStoreSuffix[] = FILE_PATH_LITERAL(".store");
+ 
+ namespace {
+ 
+-// The default URL prefix where browser reports safe browsing hits and malware
+-// details.
+-const char kSbReportsURLPrefix[] =
+-    "https://safebrowsing.google.com/safebrowsing";
++// Ember Browser: Safe Browsing reports URL disabled.
++// CinderBlock provides malware/phishing protection instead.
++const char kSbReportsURLPrefix[] = "";
+ 
+ std::string Unescape(const std::string& url) {
+   std::string unescaped_str(url);
+diff --git a/components/safe_browsing/core/browser/hashprefix_realtime/hash_realtime_service.cc b/components/safe_browsing/core/browser/hashprefix_realtime/hash_realtime_service.cc
+index 3e12ba9930..824ec8e68c 100644
+--- a/components/safe_browsing/core/browser/hashprefix_realtime/hash_realtime_service.cc
++++ b/components/safe_browsing/core/browser/hashprefix_realtime/hash_realtime_service.cc
+@@ -596,17 +596,9 @@ std::string HashRealTimeService::GetResourceUrl(
+                         base::Base64UrlEncodePolicy::INCLUDE_PADDING,
+                         &request_base64);
+ 
+-  auto resource_request = std::make_unique<network::ResourceRequest>();
+-  std::string url = base::StringPrintf(
+-      "https://safebrowsing.googleapis.com/v5/hashes:search"
+-      "?$req=%s&$ct=application/x-protobuf",
+-      request_base64.c_str());
+-  auto api_key = google_apis::GetAPIKey();
+-  if (!api_key.empty()) {
+-    base::StringAppendF(&url, "&key=%s",
+-                        base::EscapeQueryParamValue(api_key, true).c_str());
+-  }
+-  return url;
++  // Ember Browser: Safe Browsing V5 hash-prefix realtime disabled.
++  // CinderBlock provides malware/phishing protection instead.
++  return std::string();
+ }
+ 
+ void HashRealTimeService::Shutdown() {
+diff --git a/components/safe_browsing/core/browser/password_protection/password_protection_service_base.cc b/components/safe_browsing/core/browser/password_protection/password_protection_service_base.cc
+index cc84e20eb7..0e8c4996f0 100644
+--- a/components/safe_browsing/core/browser/password_protection/password_protection_service_base.cc
++++ b/components/safe_browsing/core/browser/password_protection/password_protection_service_base.cc
+@@ -39,8 +39,8 @@ namespace {
+ 
+ // Keys for storing password protection verdict into a base::Value::Dict.
+ const int kRequestTimeoutMs = 10000;
+-const char kPasswordProtectionRequestUrl[] =
+-    "https://sb-ssl.google.com/safebrowsing/clientreport/login";
++// Ember Browser: Safe Browsing password protection URL disabled.
++const char kPasswordProtectionRequestUrl[] = "";
+ 
+ // Check if the verdict makes this a security sensitive event.
+ bool IsSecuritySensitiveVerdict(
+diff --git a/components/safe_browsing/core/browser/realtime/url_lookup_service.cc b/components/safe_browsing/core/browser/realtime/url_lookup_service.cc
+index 297bc4a190..9aff553ac3 100644
+--- a/components/safe_browsing/core/browser/realtime/url_lookup_service.cc
++++ b/components/safe_browsing/core/browser/realtime/url_lookup_service.cc
+@@ -195,8 +195,9 @@ void RealTimeUrlLookupService::Shutdown() {
+ }
+ 
+ GURL RealTimeUrlLookupService::GetRealTimeLookupUrl() const {
+-  return GURL(
+-      "https://safebrowsing.google.com/safebrowsing/clientreport/realtime");
++  // Ember Browser: Safe Browsing realtime lookup disabled.
++  // CinderBlock provides phishing protection instead.
++  return GURL();
+ }
+ 
+ net::NetworkTrafficAnnotationTag

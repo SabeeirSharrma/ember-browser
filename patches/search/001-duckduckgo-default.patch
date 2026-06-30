@@ -1,44 +1,36 @@
-From: The Cinder Project <cinder@emberbrowser.org>
-Subject: [PATCH 03/04] Configure DuckDuckGo as default search engine
-
-Set DuckDuckGo as the default and only built-in search engine.
-No other search engines are added without explicit user action.
-
-Changes:
-- Set DDG as default in search provider config
-- Remove Google search provider definition
-- Add DDG search URL template with %s placeholder
-- Remove search suggestion endpoint for Google
-- Configure instant search to off by default
----
- components/search_engines/template_url_prepopulate_data.cc | 30 +++++++++-----
- chrome/browser/search/template_url_prepopulate_data.cc    | 12 ++++
- 2 files changed, 30 insertions(+), 12 deletions(-)
-
-diff --git a/components/search_engines/template_url_prepopulate_data.cc b/components/search_engines/template_url_prepopulate_data.cc
-index abc1234..def5678 100644
---- a/components/search_engines/template_url_prepopulate_data.cc
-+++ b/components/search_engines/template_url_prepopulate_data.cc
-@@ -1,30 +1,30 @@
--// EMBER: Search engine defaults overridden
--// DuckDuckGo is the sole default search engine.
-+// Ember Browser: Search engine defaults overridden.
-+// DuckDuckGo is the sole built-in search engine.
+diff --git a/components/search_engines/search_engine_countries-inc.cc b/components/search_engines/search_engine_countries-inc.cc
+index a4a0459de0..6c87234b16 100644
+--- a/components/search_engines/search_engine_countries-inc.cc
++++ b/components/search_engines/search_engine_countries-inc.cc
+@@ -36,11 +36,14 @@ struct EngineAndTier {
+ // The default will be the first engine.
+ // TODO(b/326396215): Link to documentation on this once it is published.
  
- const TemplateURLPrepopulateData::KeywordData kDefaultSearchProviderData = {
--    // Google (removed)
-+    // DuckDuckGo
-     .short_name = u"DuckDuckGo",
--    .keyword = u"duckduckgo.com",
-+    .keyword = u"ddg",
-     .search_url = u"https://duckduckgo.com/?q={searchTerms}",
-     .suggest_url = u"https://duckduckgo.com/ac/?q={searchTerms}&type=list",
-     .favicon_url = u"https://duckduckgo.com/favicon.ico",
-     .new_tab_url = u"https://duckduckgo.com/",
++// Ember Browser: DuckDuckGo is the default search engine for all regions.
++// Google is removed from the default list. Users can add custom engines via
++// ember.toml.
++
+ // Default (for countries with no better engine set)
+ constexpr EngineAndTier engines_default[] = {
+-    {SearchEngineTier::kTopEngines, &google},
++    {SearchEngineTier::kTopEngines, &duckduckgo},
+     {SearchEngineTier::kTopEngines, &bing},
+-    {SearchEngineTier::kTopEngines, &yahoo},
  };
  
--// EMBER: No other search engines prepopulated
-+// Ember: No other search engines prepopulated.
- // Users can add custom engines via ember.toml.
---
-2.42.0
+ // Note, the below entries are sorted by country code, not the name in comment.
+diff --git a/components/search_engines/template_url_prepopulate_data.cc b/components/search_engines/template_url_prepopulate_data.cc
+index 6c32b0e684..f4239557fb 100644
+--- a/components/search_engines/template_url_prepopulate_data.cc
++++ b/components/search_engines/template_url_prepopulate_data.cc
+@@ -317,8 +317,9 @@ void ClearPrepopulatedEnginesInPrefs(PrefService* prefs) {
+ std::unique_ptr<TemplateURLData> GetPrepopulatedFallbackSearch(
+     PrefService* prefs,
+     search_engines::SearchEngineChoiceService* search_engine_choice_service) {
++  // Ember Browser: DuckDuckGo is the fallback search engine.
+   return FindPrepopulatedEngineInternal(prefs, search_engine_choice_service,
+-                                        google.id,
++                                        duckduckgo.id,
+                                         /*use_first_as_fallback=*/true);
+ }
+ 

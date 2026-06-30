@@ -1,97 +1,130 @@
-From: The Cinder Project <cinder@emberbrowser.org>
-Subject: [PATCH 01/04] Remove all Google API keys and service endpoints
-
-Remove compiled-in Google API keys, OAuth client IDs, and all Google
-service endpoints from the Chromium source. This ensures no Google
-services can be contacted even if a user accidentally triggers them.
-
-Changes:
-- Strip all Google API key constants from api_keys.cc
-- Remove OAuth client ID/secret definitions
-- Remove Google service endpoint URLs from service_constants
-- Disable Google API key loading from environment variables
-- Remove Chrome Web Store API endpoints
-
-This is the first patch in the Ember degoogle series.
----
- components/google/core/common/google_api_keys.cc | 42 ++++++++-------
- chrome/common/chrome_constants.cc                | 12 ----
- chrome/common/google_chrome_url_handlers.cc      |  8 ---
- .../browser/google_url_tracker.cc                |  3 -
- services/network/public/mojom/url_loader.mojom   |  2 -
- 5 files changed, 20 insertions(+), 47 deletions(-)
-
-diff --git a/components/google/core/common/google_api_keys.cc b/components/google/core/common/google_api_keys.cc
-index abc1234..def5678 100644
---- a/components/google/core/common/google_api_keys.cc
-+++ b/components/google/core/common/google_api_keys.cc
-@@ -1,42 +1,42 @@
--// Copyright 2012 The Chromium Authors
+diff --git a/google_apis/default_api_keys-inc.cc b/google_apis/default_api_keys-inc.cc
+index fc835c95f5..67fd753199 100644
+--- a/google_apis/default_api_keys-inc.cc
++++ b/google_apis/default_api_keys-inc.cc
+@@ -1,6 +1,10 @@
+ // Copyright 2024 The Chromium Authors
 +// Copyright 2026 The Cinder Project
  // Use of this source code is governed by a BSD-style license that can be
  // found in the LICENSE file.
- 
- #include "components/google/core/common/google_api_keys.h"
- 
--#include "base/environment.h"
--#include "base/logging.h"
--#include "build/build_config.h"
--
- namespace google {
- 
--// Default API keys - EMBER: All keys removed
--// These are intentionally left empty to prevent any Google service connections.
-+// Ember Browser: All Google API keys removed.
++//
++// Ember Browser: All Google API keys set to empty strings.
 +// No Google services should be contacted by this build.
- const char kGoogleApiKey[] = "";
--const char kGoogleApiKeyClientId[] = "";
--const char kGoogleApiKeyClientSecret[] = "";
--
--// ... (additional key removals)
-+const char kOAuthClientID[] = "";
-+const char kOAuthClientSecret[] = "";
  
- }  // namespace google
-diff --git a/chrome/common/chrome_constants.cc b/chrome/common/chrome_constants.cc
-index abc1234..def5678 100644
---- a/chrome/common/chrome_constants.cc
-+++ b/chrome/common/chrome_constants.cc
-@@ -1,12 +1,2 @@
--// EMBER: Google service URLs removed
--const char kChromeWebStoreURL[] = "";
--const char kGoogleUpdateURL[] = "";
--const char kGoogleSafeBrowsingURL[] = "";
--const char kGoogleAccountURL[] = "";
--const char kSyncURL[] = "";
--
--// Kept for Ember Shell:
--const char kChromeSettingsURL[] = "chrome://settings";
--const char kChromeVersionURL[] = "chrome://version";
--const char kChromeHelpURL[] = "chrome://help";
--const char kNewTabURL[] = "chrome://newtab";
-+// Ember Browser: Google service URLs stripped.
-+// Only internal chrome:// URLs retained for Ember Shell integration.
-diff --git a/chrome/common/google_chrome_url_handlers.cc b/chrome/common/google_chrome_url_handlers.cc
-index abc1234..def5678 100644
---- a/chrome/common/google_chrome_url_handlers.cc
-+++ b/chrome/common/google_chrome_url_handlers.cc
-@@ -1,8 +1,4 @@
--// EMBER: Google URL handlers removed
--// google.com/search, google.com/webhp, translate.google.com, etc.
--// All Google-specific URL routing is disabled.
--
--// DuckDuckGo search URL handler (see search/ directory for config)
-+// Ember Browser: Google URL handlers removed.
-+// DuckDuckGo search is configured via search/ patches.
-diff --git a/chrome/browser/google_url_tracker.cc b/chrome/browser/google_url_tracker.cc
-index abc1234..def5678 100644
---- a/chrome/browser/google_url_tracker.cc
-+++ b/chrome/browser/google_url_tracker.cc
-@@ -1,3 +1,3 @@
--// EMBER: Google URL tracker disabled
--// This component tracks whether the user has visited a Google URL.
--// Removed to eliminate all Google tracking behavior.
-+// Ember Browser: Google URL tracker disabled.
-+// This component is not needed and is removed entirely.
---
-2.42.0
+ #include "build/branding_buildflags.h"
+ #include "build/chromeos_buildflags.h"
+@@ -15,82 +19,76 @@
+ //
+ // Please keep this file's list of dependencies minimal.
+ 
++// Ember Browser: All Google API keys are empty strings.
++// No Google services should be contacted by this build.
++
+ #if !defined(GOOGLE_API_KEY)
+-#define GOOGLE_API_KEY google_apis::DefaultApiKeys::kUnsetApiToken
++#define GOOGLE_API_KEY ""
+ #endif
+ 
+ #if !defined(GOOGLE_METRICS_SIGNING_KEY)
+-#define GOOGLE_METRICS_SIGNING_KEY google_apis::DefaultApiKeys::kUnsetApiToken
++#define GOOGLE_METRICS_SIGNING_KEY ""
+ #endif
+ 
+ #if !defined(GOOGLE_CLIENT_ID_MAIN)
+-#define GOOGLE_CLIENT_ID_MAIN google_apis::DefaultApiKeys::kUnsetApiToken
++#define GOOGLE_CLIENT_ID_MAIN ""
+ #endif
+ 
+ #if !defined(GOOGLE_CLIENT_SECRET_MAIN)
+-#define GOOGLE_CLIENT_SECRET_MAIN google_apis::DefaultApiKeys::kUnsetApiToken
++#define GOOGLE_CLIENT_SECRET_MAIN ""
+ #endif
+ 
+ #if !defined(GOOGLE_CLIENT_ID_REMOTING)
+-#define GOOGLE_CLIENT_ID_REMOTING google_apis::DefaultApiKeys::kUnsetApiToken
++#define GOOGLE_CLIENT_ID_REMOTING ""
+ #endif
+ 
+ #if !defined(GOOGLE_CLIENT_SECRET_REMOTING)
+-#define GOOGLE_CLIENT_SECRET_REMOTING \
+-  google_apis::DefaultApiKeys::kUnsetApiToken
++#define GOOGLE_CLIENT_SECRET_REMOTING ""
+ #endif
+ 
+ #if !defined(GOOGLE_CLIENT_ID_REMOTING_HOST)
+-#define GOOGLE_CLIENT_ID_REMOTING_HOST \
+-  google_apis::DefaultApiKeys::kUnsetApiToken
++#define GOOGLE_CLIENT_ID_REMOTING_HOST ""
+ #endif
+ 
+ #if !defined(GOOGLE_CLIENT_SECRET_REMOTING_HOST)
+-#define GOOGLE_CLIENT_SECRET_REMOTING_HOST \
+-  google_apis::DefaultApiKeys::kUnsetApiToken
++#define GOOGLE_CLIENT_SECRET_REMOTING_HOST ""
+ #endif
+ 
+ #if BUILDFLAG(IS_ANDROID)
+ #if !defined(GOOGLE_API_KEY_ANDROID_NON_STABLE)
+-#define GOOGLE_API_KEY_ANDROID_NON_STABLE \
+-  google_apis::DefaultApiKeys::kUnsetApiToken
++#define GOOGLE_API_KEY_ANDROID_NON_STABLE ""
+ #endif
+ #endif
+ 
+ #if !defined(GOOGLE_API_KEY_REMOTING)
+-#define GOOGLE_API_KEY_REMOTING google_apis::DefaultApiKeys::kUnsetApiToken
++#define GOOGLE_API_KEY_REMOTING ""
+ #endif
+ 
+-// API key for the Speech On-Device API (SODA).
+ #if !defined(GOOGLE_API_KEY_SODA)
+-#define GOOGLE_API_KEY_SODA google_apis::DefaultApiKeys::kUnsetApiToken
++#define GOOGLE_API_KEY_SODA ""
+ #endif
+ 
+ #if !BUILDFLAG(IS_ANDROID)
+-// API key for the HaTS API.
+ #if !defined(GOOGLE_API_KEY_HATS)
+-#define GOOGLE_API_KEY_HATS google_apis::DefaultApiKeys::kUnsetApiToken
++#define GOOGLE_API_KEY_HATS ""
+ #endif
+ #endif
+ 
+ #if BUILDFLAG(IS_CHROMEOS_ASH)
+-// API key for the Nearby Sharing Service.
+ #if !defined(GOOGLE_API_KEY_SHARING)
+-#define GOOGLE_API_KEY_SHARING google_apis::DefaultApiKeys::kUnsetApiToken
++#define GOOGLE_API_KEY_SHARING ""
+ #endif
+ 
+-// API key for the ReadAloud API.
+ #if !defined(GOOGLE_API_KEY_READ_ALOUD)
+-#define GOOGLE_API_KEY_READ_ALOUD google_apis::DefaultApiKeys::kUnsetApiToken
++#define GOOGLE_API_KEY_READ_ALOUD ""
+ #endif
+ 
+-// API key for the Fresnel API.
+ #if !defined(GOOGLE_API_KEY_FRESNEL)
+-#define GOOGLE_API_KEY_FRESNEL google_apis::DefaultApiKeys::kUnsetApiToken
++#define GOOGLE_API_KEY_FRESNEL ""
+ #endif
+ 
+ #if !defined(GOOGLE_API_KEY_BOCA)
+-#define GOOGLE_API_KEY_BOCA google_apis::DefaultApiKeys::kUnsetApiToken
++#define GOOGLE_API_KEY_BOCA ""
+ #endif
+ #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
+ 
+@@ -108,10 +106,8 @@
+ 
+ constexpr ::google_apis::DefaultApiKeys GetDefaultApiKeysFromDefinedValues() {
+   return {
+-      // TODO(crbug.com/40214105): Rewrite this condition using
+-      // BUILDFLAG(SUPPORT_EXTERNAL_GOOGLE_API_KEY).
+-      .allow_unset_values =
+-          !BUILDFLAG(GOOGLE_CHROME_BRANDING) || BUILDFLAG(IS_FUCHSIA),
++      // Ember Browser: Always allow unset values — no Google keys needed.
++      .allow_unset_values = true,
+       .allow_override_via_environment = !BUILDFLAG(GOOGLE_CHROME_BRANDING),
+       .google_api_key = GOOGLE_API_KEY,
+       .google_metrics_signing_key = GOOGLE_METRICS_SIGNING_KEY,
