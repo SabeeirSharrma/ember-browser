@@ -48,6 +48,7 @@ GN_ARGS=(
     'use_lld=true'
     'dcheck_always_on=false'
     'treat_warnings_as_errors=false'
+    'clang_base_flags="-Wno-implicit-fallthrough"'
 )
 
 # --- Helpers ---

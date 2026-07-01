@@ -1,0 +1,34 @@
+diff --git a/third_party/blink/renderer/build/scripts/gperf.py b/third_party/blink/renderer/build/scripts/gperf.py
+index 42630d37c5..1744446b80 100644
+--- a/third_party/blink/renderer/build/scripts/gperf.py
++++ b/third_party/blink/renderer/build/scripts/gperf.py
+@@ -34,11 +34,12 @@ def generate_gperf(gperf_path, gperf_input, gperf_args):
+         # it from gperf's output.
+         # https://savannah.gnu.org/bugs/index.php?53028
+         gperf_output = re.sub(r'\bregister ', '', gperf_output)
+-        # -Wimplicit-fallthrough needs an explicit fallthrough statement,
+-        # so replace gperf's /*FALLTHROUGH*/ comment with the statement.
+-        # https://savannah.gnu.org/bugs/index.php?53029
+-        gperf_output = gperf_output.replace('/*FALLTHROUGH*/',
+-                                            '  [[fallthrough]];')
++        # gperf 3.3+ already generates proper [[fallthrough]] with #if guards.
++        # Only replace /*FALLTHROUGH*/ if no [[fallthrough]] already exists
++        # nearby, to avoid duplicate annotations that break clang 20.
++        if '[[fallthrough]]' not in gperf_output:
++            gperf_output = gperf_output.replace('/*FALLTHROUGH*/',
++                                                '  [[fallthrough]];')
+         # -Wpointer-to-int-cast warns about casting pointers to smaller ints
+         # Replace {(int)(long)&(foo), bar} with
+         # {static_cast<int>(reinterpret_cast<uintptr_t>(&(foo)), bar}
+diff --git a/third_party/blink/renderer/platform/color_data.gperf b/third_party/blink/renderer/platform/color_data.gperf
+index e9281252d6..6d183fd06a 100644
+--- a/third_party/blink/renderer/platform/color_data.gperf
++++ b/third_party/blink/renderer/platform/color_data.gperf
+@@ -3,6 +3,7 @@
+ #include <string.h>
+ 
+ #pragma clang diagnostic ignored "-Wshorten-64-to-32"
++#pragma clang diagnostic ignored "-Wimplicit-fallthrough"
+ 
+ namespace blink {
+ 

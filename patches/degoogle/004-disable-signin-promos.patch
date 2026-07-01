@@ -1,0 +1,65 @@
+diff --git a/chrome/browser/signin/dice_web_signin_interceptor.cc b/chrome/browser/signin/dice_web_signin_interceptor.cc
+index 9b2b790d14..941c28b89a 100644
+--- a/chrome/browser/signin/dice_web_signin_interceptor.cc
++++ b/chrome/browser/signin/dice_web_signin_interceptor.cc
+@@ -602,6 +602,9 @@ void DiceWebSigninInterceptor::MaybeInterceptWebSignin(
+     signin_metrics::AccessPoint access_point,
+     bool is_new_account,
+     bool is_sync_signin) {
++  // Ember Browser: Chrome sign-in interception is disabled.
++  // Users can sign into websites but not into Chrome itself.
++  return;
+   // If the user is in sign in pending state and signs in with a different
+   // account, it means that they enter an inconsistent state. Record this event
+   // so that we can check afterwards if this state is resolved by accepting the
+diff --git a/chrome/browser/signin/signin_promo_util.cc b/chrome/browser/signin/signin_promo_util.cc
+index 04f66f95e8..b36505b958 100644
+--- a/chrome/browser/signin/signin_promo_util.cc
++++ b/chrome/browser/signin/signin_promo_util.cc
+@@ -48,44 +48,9 @@ namespace {
+ // ShouldShowSyncPromo and ShouldShowSignInPromo). |profile| is the profile of
+ // the tab the promo would be shown on.
+ bool ShouldShowPromoCommon(Profile& profile) {
+-#if BUILDFLAG(IS_CHROMEOS_ASH)
+-  // There's no need to show the sign in promo on cros since cros users are
+-  // already logged in.
++  // Ember Browser: Sign-in to Chrome promos are disabled.
++  // Users can sign into websites (google.com) but not into Chrome itself.
+   return false;
+-#else
+-
+-  // Don't bother if we don't have any kind of network connection.
+-  if (net::NetworkChangeNotifier::IsOffline()) {
+-    return false;
+-  }
+-
+-  // Consider original profile even if an off-the-record profile was
+-  // passed to this method as sign-in state is only defined for the
+-  // primary profile.
+-  Profile* original_profile = profile.GetOriginalProfile();
+-
+-  // Don't show for supervised child profiles.
+-  if (original_profile->IsChild()) {
+-    return false;
+-  }
+-
+-  // Don't show if sign in is not allowed.
+-  if (!original_profile->GetPrefs()->GetBoolean(prefs::kSigninAllowed)) {
+-    return false;
+-  }
+-
+-  signin::IdentityManager* identity_manager =
+-      IdentityManagerFactory::GetForProfile(original_profile);
+-
+-  // No promo if the user is already syncing.
+-  if (identity_manager->HasPrimaryAccount(signin::ConsentLevel::kSync)) {
+-    return false;
+-  }
+-
+-  // Verified the base checks. Depending on whether the promo should be for sync
+-  // or signin, additional checks are necessary.
+-  return true;
+-#endif
+ }
+ 
+ #if BUILDFLAG(ENABLE_DICE_SUPPORT)
