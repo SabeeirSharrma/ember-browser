@@ -109,7 +109,7 @@ apply_patches() {
     cd "${CHROMIUM_SRC}"
 
     # Apply patches in order
-    local patch_dirs=("degoogle" "privacy" "search" "shell")
+    local patch_dirs=("degoogle" "privacy" "search" "shell" "build")
     local patch_count=0
 
     for dir in "${patch_dirs[@]}"; do
