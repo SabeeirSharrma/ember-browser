@@ -1,0 +1,270 @@
+[sabeeir@sabeeir Ember Browser]$ cd chromium/src && git checkout -- . && ninja -C out/Default chrome
+ninja: Entering directory `out/Default'
+[120/4713] ACTION //third_party/dom_di..._gen(//build/toolchain/linux:clang_x64)
+/run/media/sabeeir/Work/SabeeirSharrma/Ember Browser/chromium/src/third_party/protobuf/python/google/__init__.py:2: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  __import__('pkg_resources').declare_namespace(__name__)
+[121/4713] ACTION //third_party/dom_di..._gen(//build/toolchain/linux:clang_x64)
+/run/media/sabeeir/Work/SabeeirSharrma/Ember Browser/chromium/src/third_party/protobuf/python/google/__init__.py:2: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  __import__('pkg_resources').declare_namespace(__name__)
+[122/4713] ACTION //components/optimiz...ator(//build/toolchain/linux:clang_x64)
+/run/media/sabeeir/Work/SabeeirSharrma/Ember Browser/chromium/src/third_party/protobuf/python/google/__init__.py:2: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  __import__('pkg_resources').declare_namespace(__name__)
+[168/1592] ACTION //components/policy:...rate(//build/toolchain/linux:clang_x64)
+/run/media/sabeeir/Work/SabeeirSharrma/Ember Browser/chromium/src/out/Default/../../components/policy/tools/generate_policy_source.py:422: DeprecationWarning: codecs.open() is deprecated. Use open() instead.
+  with codecs.open(json_file, 'r', encoding='utf-8') as f:
+/run/media/sabeeir/Work/SabeeirSharrma/Ember Browser/chromium/src/out/Default/../../components/policy/tools/generate_policy_source.py:358: DeprecationWarning: codecs.open() is deprecated. Use open() instead.
+  with codecs.open(path, 'w', encoding='utf-8') as f:
+[175/1592] ACTION //chrome/browser/pri...rate(//build/toolchain/linux:clang_x64)
+/run/media/sabeeir/Work/SabeeirSharrma/Ember Browser/chromium/src/out/Default/../../components/policy/tools/generate_policy_source.py:422: DeprecationWarning: codecs.open() is deprecated. Use open() instead.
+  with codecs.open(json_file, 'r', encoding='utf-8') as f:
+/run/media/sabeeir/Work/SabeeirSharrma/Ember Browser/chromium/src/out/Default/../../components/policy/tools/generate_policy_source.py:358: DeprecationWarning: codecs.open() is deprecated. Use open() instead.
+  with codecs.open(path, 'w', encoding='utf-8') as f:
+[495/1419] CXX obj/third_party/blink/renderer/platform/platform/color_data.o
+FAILED: [code=1] obj/third_party/blink/renderer/platform/platform/color_data.o 
+../../third_party/llvm-build/Release+Asserts/bin/clang++ -MMD -MF obj/third_party/blink/renderer/platform/platform/color_data.o.d -DUSE_UDEV -DUSE_AURA=1 -DUSE_GLIB=1 -DUSE_OZONE=1 -DOFFICIAL_BUILD -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -DNO_UNWIND_TABLES -D_GNU_SOURCE -DCR_CLANG_REVISION=\"llvmorg-20-init-6794-g3dbd929e-1\" -D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE -D_LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS -D_LIBCXXABI_DISABLE_VISIBILITY_ANNOTATIONS -DCR_LIBCXX_REVISION=6a68fd412b9aecd515a20a7cf84d11b598bfaf96 -DTEMP_REBUILD_HACK -DCR_SYSROOT_KEY=20230611T210420Z-2 -DNDEBUG -DNVALGRIND -DDYNAMIC_ANNOTATIONS_ENABLED=0 -DBLINK_IMPLEMENTATION=1 -DINSIDE_BLINK -DBLINK_PLATFORM_IMPLEMENTATION=1 -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_56 -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_56 -DSK_ENABLE_SKSL -DSK_UNTIL_CRBUG_1187654_IS_FIXED -DSK_USER_CONFIG_HEADER=\"../../skia/config/SkUserConfig.h\" -DSK_WIN_FONTMGR_NO_SIMULATIONS -DSK_DISABLE_LEGACY_INIT_DECODERS -DSK_DISABLE_LEGACY_BACKEND_TEXTURE_FUNCS -DSK_DISABLE_LEGACY_TEXTURE_INFO_FUNCS -DSK_DISABLE_LEGACY_BACKEND_SEMAPHORE_FUNCS -DSK_DISABLE_LEGACY_GRAPHITE_IMAGES -DSK_DISABLE_LEGACY_DAWN_TEXTURE_INFO_FUNCS -DSK_DISABLE_LEGACY_DAWN_BACKEND_TEXTURE_FUNCS -DSK_CODEC_DECODES_JPEG -DSK_ENCODE_JPEG -DSK_ENCODE_PNG -DSK_ENCODE_WEBP -DSK_GANESH -DSK_GPU_WORKAROUNDS_HEADER=\"gpu/config/gpu_driver_bug_workaround_autogen.h\" -DSK_GL -DSK_VULKAN=1 -DSK_GRAPHITE -DSK_DAWN -DVK_USE_PLATFORM_XCB_KHR -DVK_USE_PLATFORM_WAYLAND_KHR -DCHROMIUM -DLIBYUV_DISABLE_NEON -DLIBYUV_DISABLE_SVE -DLIBYUV_DISABLE_SME -DLIBYUV_DISABLE_LSX -DLIBYUV_DISABLE_LASX -DWTF_USE_WEBAUDIO_PFFFT=1 -DCR_CXX_INCLUDE=\"third_party/rust/chromium_crates_io/vendor/cxx-1.0.128/include/cxx.h\" -DU_USING_ICU_NAMESPACE=0 -DU_ENABLE_DYLOAD=0 -DUSE_CHROMIUM_ICU=1 -DU_ENABLE_TRACING=1 -DU_ENABLE_RESOURCE_TRACING=0 -DU_STATIC_IMPLEMENTATION -DICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE -DGOOGLE_PROTOBUF_NO_RTTI -DGOOGLE_PROTOBUF_NO_STATIC_INITIALIZER -DGOOGLE_PROTOBUF_INTERNAL_DONATE_STEAL_INLINE=0 -DHAVE_PTHREAD -DV8_ARRAY_BUFFER_INTERNAL_FIELD_COUNT=0 -DV8_ARRAY_BUFFER_VIEW_INTERNAL_FIELD_COUNT=0 -DV8_PROMISE_INTERNAL_FIELD_COUNT=0 -DV8_COMPRESS_POINTERS -DV8_COMPRESS_POINTERS_IN_SHARED_CAGE -DV8_31BIT_SMIS_ON_64BIT_ARCH -DV8_ENABLE_SANDBOX -DV8_DEPRECATION_WARNINGS -DV8_USE_PERFETTO -DV8_HAVE_TARGET_OS -DV8_TARGET_OS_LINUX -DCPPGC_CAGED_HEAP -DCPPGC_YOUNG_GENERATION -DCPPGC_POINTER_COMPRESSION -DCPPGC_ENABLE_LARGER_CAGE -DCPPGC_SLIM_WRITE_BARRIER -DWEBRTC_ENABLE_AVX2 -DWEBRTC_CHROMIUM_BUILD -DWEBRTC_POSIX -DWEBRTC_LINUX -DABSL_ALLOCATOR_NOTHROW=1 -DWEBRTC_USE_X11 -DWEBRTC_USE_PIPEWIRE -DWEBRTC_USE_GIO -DLOGGING_INSIDE_WEBRTC -DLEVELDB_PLATFORM_CHROMIUM=1 -DCRASHPAD_ZLIB_SOURCE_EXTERNAL -DUSE_LIBJPEG_TURBO=1 -DMANGLE_JPEG_NAMES -DWEBP_EXTERN=extern -DFT_CONFIG_MODULES_H=\"freetype-custom/freetype/config/ftmodule.h\" -DFT_CONFIG_OPTIONS_H=\"freetype-custom/freetype/config/ftoption.h\" -DPDFIUM_REQUIRED_MODULES -DCHROMIUM_RESTRICT_VISIBILITY -DLIBGAV1_MAX_BITDEPTH=10 -DLIBGAV1_THREADPOOL_USE_STD_MUTEX -DLIBGAV1_ENABLE_LOGGING=0 -DLIBGAV1_PUBLIC= -I../../third_party/pffft/src -I../.. -Igen -I../../buildtools/third_party/libc++ -I../../third_party/perfetto/include -Igen/third_party/perfetto/build_config -Igen/third_party/perfetto -I../../third_party/skia -Igen/third_party/skia -I../../third_party/wuffs/src/release/c -I../../third_party/vulkan/include -I../../third_party/vulkan-headers/src/include -I../../third_party/wayland/src/src -I../../third_party/wayland/include/src -Igen/third_party/dawn/include -I../../third_party/dawn/include -I../../net/third_party/quiche/overrides -I../../net/third_party/quiche/src/quiche/common/platform/default -I../../net/third_party/quiche/src -I../../third_party/khronos -I../../gpu -I../../third_party/libyuv/include -I../../base/allocator/partition_allocator/src -Igen/base/allocator/partition_allocator/src -I../../third_party/abseil-cpp -I../../third_party/boringssl/src/include -I../../third_party/protobuf/src -Igen/protoc_out -I../../third_party/ipcz/include -I../../third_party/ced/src -I../../third_party/icu/source/common -I../../third_party/icu/source/i18n -Igen/net/third_party/quiche/src -I../../v8/include -I../../third_party/webrtc_overrides -I../../third_party/webrtc -Igen/third_party/webrtc -I../../third_party/libwebm/source -I../../third_party/angle/include -I../../third_party/mesa_headers -I../../third_party/leveldatabase -I../../third_party/leveldatabase/src -I../../third_party/leveldatabase/src/include -I../../third_party/crashpad/crashpad -I../../third_party/crashpad/crashpad/compat/linux -I../../third_party/crashpad/crashpad/compat/non_win -I../../third_party/zlib -I../../third_party/libaom/source/libaom -I../../third_party/libaom/source/config/linux/x64 -I../../third_party/libjpeg_turbo -I../../third_party/libpng -I../../third_party/libwebp/src/src -I../../third_party/ots/src/include -Igen/v8/include -I../../third_party/fp16/src/include -I../../third_party/freetype/include -I../../third_party/freetype/include/freetype-custom -I../../third_party/freetype/src/include -I../../third_party/harfbuzz-ng/src/src -I../../third_party/emoji-segmenter/src -I../../third_party/libgav1/src -I../../third_party/libgav1/src/src -I../../third_party/one_euro_filter/src -I../../third_party/snappy/src -I../../third_party/snappy/linux -Wall -Wextra -Wimplicit-fallthrough -Wextra-semi -Wunreachable-code-aggressive -Wthread-safety -Wno-missing-field-initializers -Wno-unused-parameter -Wno-psabi -Wloop-analysis -Wno-unneeded-internal-declaration -Wno-cast-function-type -Wno-thread-safety-reference-return -Wshadow -fno-delete-null-pointer-checks -fno-ident -fno-strict-aliasing -fstack-protector -fno-unwind-tables -fno-asynchronous-unwind-tables -fPIC -pthread -fcolor-diagnostics -fmerge-all-constants -fno-sized-deallocation -fcrash-diagnostics-dir=../../tools/clang/crashreports -mllvm -instcombine-lower-dbg-declare=0 -mllvm -split-threshold-for-reg-with-hint=0 -ffp-contract=off -flto=thin -fsplit-lto-unit -mllvm -inlinehint-threshold=360 -fwhole-program-vtables -fcomplete-member-pointers -m64 -msse3 -ffile-compilation-dir=. -no-canonical-prefixes -ftrivial-auto-var-init=pattern -fno-omit-frame-pointer -fsanitize=cfi-vcall -fsanitize-ignorelist=../../tools/cfi/ignores.txt -fsanitize=cfi-icall -fvisibility=hidden -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare -Xclang -add-plugin -Xclang find-bad-constructs -Xclang -plugin-arg-find-bad-constructs -Xclang span-ctor-from-string-literal -Xclang -plugin-arg-find-bad-constructs -Xclang raw-ref-template-as-trivial-member -Xclang -plugin-arg-find-bad-constructs -Xclang raw-span-template-as-trivial-member -Xclang -plugin-arg-find-bad-constructs -Xclang check-stack-allocated -Xclang -plugin-arg-find-bad-constructs -Xclang check-ipc -Xclang -add-plugin -Xclang raw-ptr-plugin -Xclang -plugin-arg-raw-ptr-plugin -Xclang check-raw-ptr-to-stack-allocated -Xclang -plugin-arg-raw-ptr-plugin -Xclang disable-check-raw-ptr-to-stack-allocated-error -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../third_party/dawn/ -DUNSAFE_BUFFERS_BUILD -Xclang -add-plugin -Xclang unsafe-buffers -Xclang -plugin-arg-unsafe-buffers -Xclang ../../build/config/unsafe_buffers_paths.txt -Xclang -plugin-arg-find-bad-constructs -Xclang check-blink-data-member-type -Xclang -add-plugin -Xclang blink-gc-plugin -Wconversion -Wno-float-conversion -Wno-sign-conversion -Wno-implicit-float-conversion -Wno-implicit-int-conversion -Wexit-time-destructors -Wglobal-constructors -O2 -fdata-sections -ffunction-sections -fno-unique-section-names -fno-math-errno -g0 -isystem../../build/linux/debian_bullseye_amd64-sysroot/usr/include/glib-2.0 -isystem../../build/linux/debian_bullseye_amd64-sysroot/usr/lib/x86_64-linux-gnu/glib-2.0/include -Wno-redundant-parens -Wno-redundant-parens -DPROTOBUF_ALLOW_DEPRECATED=1 -isystem../../build/linux/debian_bullseye_amd64-sysroot/usr/include/nss -isystem../../build/linux/debian_bullseye_amd64-sysroot/usr/include/nspr -isystem../../build/linux/debian_bullseye_amd64-sysroot/usr/include/dbus-1.0 -isystem../../build/linux/debian_bullseye_amd64-sysroot/usr/lib/x86_64-linux-gnu/dbus-1.0/include -Wno-invalid-offsetof -Wenum-compare-conditional -Wno-c++11-narrowing-const-reference -Wno-missing-template-arg-list-after-template-kw -Wno-dangling-assignment-gsl -std=c++20 -Wno-trigraphs -gsimple-template-names -fno-exceptions -fno-rtti -nostdinc++ -isystem../../third_party/libc++/src/include -isystem../../third_party/libc++abi/src/include --sysroot=../../build/linux/debian_bullseye_amd64-sysroot -fvisibility-inlines-hidden -c gen/third_party/blink/renderer/platform/color_data.cc -o obj/third_party/blink/renderer/platform/platform/color_data.o
+gen/third_party/blink/renderer/platform/color_data.cc:234:7: error: fallthrough annotation does not directly precede switch label
+  234 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/platform/color_data.cc:210:7: error: fallthrough annotation does not directly precede switch label
+  210 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/platform/color_data.cc:106:7: error: fallthrough annotation does not directly precede switch label
+  106 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/platform/color_data.cc:146:7: error: fallthrough annotation does not directly precede switch label
+  146 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/platform/color_data.cc:186:7: error: fallthrough annotation does not directly precede switch label
+  186 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/platform/color_data.cc:170:7: error: fallthrough annotation does not directly precede switch label
+  170 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/platform/color_data.cc:114:7: error: fallthrough annotation does not directly precede switch label
+  114 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/platform/color_data.cc:194:7: error: fallthrough annotation does not directly precede switch label
+  194 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/platform/color_data.cc:218:7: error: fallthrough annotation does not directly precede switch label
+  218 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/platform/color_data.cc:130:7: error: fallthrough annotation does not directly precede switch label
+  130 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/platform/color_data.cc:154:7: error: fallthrough annotation does not directly precede switch label
+  154 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/platform/color_data.cc:122:7: error: fallthrough annotation does not directly precede switch label
+  122 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/platform/color_data.cc:178:7: error: fallthrough annotation does not directly precede switch label
+  178 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/platform/color_data.cc:98:7: error: fallthrough annotation does not directly precede switch label
+   98 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/platform/color_data.cc:242:7: error: fallthrough annotation does not directly precede switch label
+  242 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/platform/color_data.cc:202:7: error: fallthrough annotation does not directly precede switch label
+  202 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/platform/color_data.cc:162:7: error: fallthrough annotation does not directly precede switch label
+  162 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/platform/color_data.cc:138:7: error: fallthrough annotation does not directly precede switch label
+  138 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/platform/color_data.cc:226:7: error: fallthrough annotation does not directly precede switch label
+  226 |       [[fallthrough]];
+      |       ^
+19 errors generated.
+[496/1419] CXX obj/third_party/blink/r...re/core_generated/at_rule_descriptors.o
+FAILED: [code=1] obj/third_party/blink/renderer/core/core_generated/at_rule_descriptors.o 
+../../third_party/llvm-build/Release+Asserts/bin/clang++ -MMD -MF obj/third_party/blink/renderer/core/core_generated/at_rule_descriptors.o.d -DUSE_UDEV -DUSE_AURA=1 -DUSE_GLIB=1 -DUSE_OZONE=1 -DOFFICIAL_BUILD -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -DNO_UNWIND_TABLES -D_GNU_SOURCE -DCR_CLANG_REVISION=\"llvmorg-20-init-6794-g3dbd929e-1\" -D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE -D_LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS -D_LIBCXXABI_DISABLE_VISIBILITY_ANNOTATIONS -DCR_LIBCXX_REVISION=6a68fd412b9aecd515a20a7cf84d11b598bfaf96 -DTEMP_REBUILD_HACK -DCR_SYSROOT_KEY=20230611T210420Z-2 -DNDEBUG -DNVALGRIND -DDYNAMIC_ANNOTATIONS_ENABLED=0 -DBLINK_CORE_IMPLEMENTATION=1 -DBLINK_IMPLEMENTATION=1 -DINSIDE_BLINK -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_56 -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_56 -DCHROMIUM -DLIBYUV_DISABLE_NEON -DLIBYUV_DISABLE_SVE -DLIBYUV_DISABLE_SME -DLIBYUV_DISABLE_LSX -DLIBYUV_DISABLE_LASX -DSK_ENABLE_SKSL -DSK_UNTIL_CRBUG_1187654_IS_FIXED -DSK_USER_CONFIG_HEADER=\"../../skia/config/SkUserConfig.h\" -DSK_WIN_FONTMGR_NO_SIMULATIONS -DSK_DISABLE_LEGACY_INIT_DECODERS -DSK_DISABLE_LEGACY_BACKEND_TEXTURE_FUNCS -DSK_DISABLE_LEGACY_TEXTURE_INFO_FUNCS -DSK_DISABLE_LEGACY_BACKEND_SEMAPHORE_FUNCS -DSK_DISABLE_LEGACY_GRAPHITE_IMAGES -DSK_DISABLE_LEGACY_DAWN_TEXTURE_INFO_FUNCS -DSK_DISABLE_LEGACY_DAWN_BACKEND_TEXTURE_FUNCS -DSK_CODEC_DECODES_JPEG -DSK_ENCODE_JPEG -DSK_ENCODE_PNG -DSK_ENCODE_WEBP -DSK_GANESH -DSK_GPU_WORKAROUNDS_HEADER=\"gpu/config/gpu_driver_bug_workaround_autogen.h\" -DSK_GL -DSK_VULKAN=1 -DSK_GRAPHITE -DSK_DAWN -DVK_USE_PLATFORM_XCB_KHR -DVK_USE_PLATFORM_WAYLAND_KHR -DGOOGLE_PROTOBUF_NO_RTTI -DGOOGLE_PROTOBUF_NO_STATIC_INITIALIZER -DGOOGLE_PROTOBUF_INTERNAL_DONATE_STEAL_INLINE=0 -DHAVE_PTHREAD -DCR_CXX_INCLUDE=\"third_party/rust/chromium_crates_io/vendor/cxx-1.0.128/include/cxx.h\" -DU_USING_ICU_NAMESPACE=0 -DU_ENABLE_DYLOAD=0 -DUSE_CHROMIUM_ICU=1 -DU_ENABLE_TRACING=1 -DU_ENABLE_RESOURCE_TRACING=0 -DU_STATIC_IMPLEMENTATION -DICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE -DWEBRTC_ENABLE_AVX2 -DWEBRTC_CHROMIUM_BUILD -DWEBRTC_POSIX -DWEBRTC_LINUX -DABSL_ALLOCATOR_NOTHROW=1 -DWEBRTC_USE_X11 -DWEBRTC_USE_PIPEWIRE -DWEBRTC_USE_GIO -DLOGGING_INSIDE_WEBRTC -DV8_ARRAY_BUFFER_INTERNAL_FIELD_COUNT=0 -DV8_ARRAY_BUFFER_VIEW_INTERNAL_FIELD_COUNT=0 -DV8_PROMISE_INTERNAL_FIELD_COUNT=0 -DV8_COMPRESS_POINTERS -DV8_COMPRESS_POINTERS_IN_SHARED_CAGE -DV8_31BIT_SMIS_ON_64BIT_ARCH -DV8_ENABLE_SANDBOX -DV8_DEPRECATION_WARNINGS -DV8_USE_PERFETTO -DV8_HAVE_TARGET_OS -DV8_TARGET_OS_LINUX -DCPPGC_CAGED_HEAP -DCPPGC_YOUNG_GENERATION -DCPPGC_POINTER_COMPRESSION -DCPPGC_ENABLE_LARGER_CAGE -DCPPGC_SLIM_WRITE_BARRIER -DLEVELDB_PLATFORM_CHROMIUM=1 -DCRASHPAD_ZLIB_SOURCE_EXTERNAL -DWTF_USE_WEBAUDIO_PFFFT=1 -DUSE_LIBJPEG_TURBO=1 -DMANGLE_JPEG_NAMES -DWEBP_EXTERN=extern -DLIBXSLT_STATIC -I../.. -Igen -I../../buildtools/third_party/libc++ -I../../third_party/perfetto/include -Igen/third_party/perfetto/build_config -Igen/third_party/perfetto -I../../net/third_party/quiche/overrides -I../../net/third_party/quiche/src/quiche/common/platform/default -I../../net/third_party/quiche/src -I../../third_party/libyuv/include -I../../third_party/skia -Igen/third_party/skia -I../../third_party/wuffs/src/release/c -I../../third_party/vulkan/include -I../../third_party/vulkan-headers/src/include -I../../third_party/wayland/src/src -I../../third_party/wayland/include/src -Igen/third_party/dawn/include -I../../third_party/dawn/include -I../../third_party/khronos -I../../gpu -I../../third_party/protobuf/src -Igen/protoc_out -I../../base/allocator/partition_allocator/src -Igen/base/allocator/partition_allocator/src -I../../third_party/abseil-cpp -I../../third_party/boringssl/src/include -I../../third_party/ipcz/include -I../../third_party/ced/src -I../../third_party/icu/source/common -I../../third_party/icu/source/i18n -Igen/net/third_party/quiche/src -I../../third_party/webrtc_overrides -I../../third_party/webrtc -Igen/third_party/webrtc -I../../v8/include -I../../third_party/libwebm/source -I../../third_party/angle/include -I../../third_party/mesa_headers -I../../third_party/leveldatabase -I../../third_party/leveldatabase/src -I../../third_party/leveldatabase/src/include -I../../third_party/crashpad/crashpad -I../../third_party/crashpad/crashpad/compat/linux -I../../third_party/crashpad/crashpad/compat/non_win -I../../third_party/zlib -I../../third_party/libaom/source/libaom -I../../third_party/libaom/source/config/linux/x64 -I../../third_party/libjpeg_turbo -I../../third_party/libpng -I../../third_party/libwebp/src/src -I../../third_party/ots/src/include -Igen/v8/include -I../../third_party/fp16/src/include -I../../third_party/libxml/src/include -I../../third_party/libxml/linux/include -I../../third_party/libxslt/src -Wall -Wextra -Wimplicit-fallthrough -Wextra-semi -Wunreachable-code-aggressive -Wthread-safety -Wno-missing-field-initializers -Wno-unused-parameter -Wno-psabi -Wloop-analysis -Wno-unneeded-internal-declaration -Wno-cast-function-type -Wno-thread-safety-reference-return -Wshadow -fno-delete-null-pointer-checks -fno-ident -fno-strict-aliasing -fstack-protector -fno-unwind-tables -fno-asynchronous-unwind-tables -fPIC -pthread -fcolor-diagnostics -fmerge-all-constants -fno-sized-deallocation -fcrash-diagnostics-dir=../../tools/clang/crashreports -mllvm -instcombine-lower-dbg-declare=0 -mllvm -split-threshold-for-reg-with-hint=0 -ffp-contract=off -flto=thin -fsplit-lto-unit -mllvm -inlinehint-threshold=360 -fwhole-program-vtables -fcomplete-member-pointers -m64 -msse3 -ffile-compilation-dir=. -no-canonical-prefixes -ftrivial-auto-var-init=pattern -fno-omit-frame-pointer -fsanitize=cfi-vcall -fsanitize-ignorelist=../../tools/cfi/ignores.txt -fsanitize=cfi-icall -fvisibility=hidden -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare -Xclang -add-plugin -Xclang find-bad-constructs -Xclang -plugin-arg-find-bad-constructs -Xclang span-ctor-from-string-literal -Xclang -plugin-arg-find-bad-constructs -Xclang raw-ref-template-as-trivial-member -Xclang -plugin-arg-find-bad-constructs -Xclang raw-span-template-as-trivial-member -Xclang -plugin-arg-find-bad-constructs -Xclang check-stack-allocated -Xclang -plugin-arg-find-bad-constructs -Xclang check-ipc -Xclang -add-plugin -Xclang raw-ptr-plugin -Xclang -plugin-arg-raw-ptr-plugin -Xclang check-raw-ptr-to-stack-allocated -Xclang -plugin-arg-raw-ptr-plugin -Xclang disable-check-raw-ptr-to-stack-allocated-error -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../third_party/dawn/ -DUNSAFE_BUFFERS_BUILD -Xclang -add-plugin -Xclang unsafe-buffers -Xclang -plugin-arg-unsafe-buffers -Xclang ../../build/config/unsafe_buffers_paths.txt -Xclang -plugin-arg-find-bad-constructs -Xclang check-blink-data-member-type -Xclang -add-plugin -Xclang blink-gc-plugin -Wexit-time-destructors -Wglobal-constructors -Xclang -plugin-arg-find-bad-constructs -Xclang check-layout-object-methods -O2 -fdata-sections -ffunction-sections -fno-unique-section-names -fno-math-errno -g0 -Wconversion -Wno-float-conversion -Wno-sign-conversion -Wno-implicit-float-conversion -Wno-implicit-int-conversion -isystem../../build/linux/debian_bullseye_amd64-sysroot/usr/include/glib-2.0 -isystem../../build/linux/debian_bullseye_amd64-sysroot/usr/lib/x86_64-linux-gnu/glib-2.0/include -Wno-redundant-parens -Wno-redundant-parens -DPROTOBUF_ALLOW_DEPRECATED=1 -isystem../../build/linux/debian_bullseye_amd64-sysroot/usr/include/nss -isystem../../build/linux/debian_bullseye_amd64-sysroot/usr/include/nspr -isystem../../build/linux/debian_bullseye_amd64-sysroot/usr/include/dbus-1.0 -isystem../../build/linux/debian_bullseye_amd64-sysroot/usr/lib/x86_64-linux-gnu/dbus-1.0/include -DLIBXML_STATIC= -Wno-invalid-offsetof -Wenum-compare-conditional -Wno-c++11-narrowing-const-reference -Wno-missing-template-arg-list-after-template-kw -Wno-dangling-assignment-gsl -std=c++20 -Wno-trigraphs -gsimple-template-names -fno-exceptions -fno-rtti -nostdinc++ -isystem../../third_party/libc++/src/include -isystem../../third_party/libc++abi/src/include --sysroot=../../build/linux/debian_bullseye_amd64-sysroot -fvisibility-inlines-hidden -c gen/third_party/blink/renderer/core/css/parser/at_rule_descriptors.cc -o obj/third_party/blink/renderer/core/core_generated/at_rule_descriptors.o
+gen/third_party/blink/renderer/core/css/parser/at_rule_descriptors.cc:117:7: error: fallthrough annotation does not directly precede switch label
+  117 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/parser/at_rule_descriptors.cc:189:7: error: fallthrough annotation does not directly precede switch label
+  189 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/parser/at_rule_descriptors.cc:277:7: error: fallthrough annotation does not directly precede switch label
+  277 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/parser/at_rule_descriptors.cc:301:7: error: fallthrough annotation does not directly precede switch label
+  301 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/parser/at_rule_descriptors.cc:213:7: error: fallthrough annotation does not directly precede switch label
+  213 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/parser/at_rule_descriptors.cc:181:7: error: fallthrough annotation does not directly precede switch label
+  181 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/parser/at_rule_descriptors.cc:205:7: error: fallthrough annotation does not directly precede switch label
+  205 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/parser/at_rule_descriptors.cc:101:7: error: fallthrough annotation does not directly precede switch label
+  101 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/parser/at_rule_descriptors.cc:253:7: error: fallthrough annotation does not directly precede switch label
+  253 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/parser/at_rule_descriptors.cc:165:7: error: fallthrough annotation does not directly precede switch label
+  165 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/parser/at_rule_descriptors.cc:293:7: error: fallthrough annotation does not directly precede switch label
+  293 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/parser/at_rule_descriptors.cc:141:7: error: fallthrough annotation does not directly precede switch label
+  141 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/parser/at_rule_descriptors.cc:229:7: error: fallthrough annotation does not directly precede switch label
+  229 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/parser/at_rule_descriptors.cc:317:7: error: fallthrough annotation does not directly precede switch label
+  317 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/parser/at_rule_descriptors.cc:221:7: error: fallthrough annotation does not directly precede switch label
+  221 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/parser/at_rule_descriptors.cc:197:7: error: fallthrough annotation does not directly precede switch label
+  197 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/parser/at_rule_descriptors.cc:269:7: error: fallthrough annotation does not directly precede switch label
+  269 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/parser/at_rule_descriptors.cc:309:7: error: fallthrough annotation does not directly precede switch label
+  309 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/parser/at_rule_descriptors.cc:149:7: error: fallthrough annotation does not directly precede switch label
+  149 |       [[fallthrough]];
+      |       ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+[497/1419] CXX obj/third_party/blink/r...ore/core_generated/css_value_keywords.o
+FAILED: [code=1] obj/third_party/blink/renderer/core/core_generated/css_value_keywords.o 
+../../third_party/llvm-build/Release+Asserts/bin/clang++ -MMD -MF obj/third_party/blink/renderer/core/core_generated/css_value_keywords.o.d -DUSE_UDEV -DUSE_AURA=1 -DUSE_GLIB=1 -DUSE_OZONE=1 -DOFFICIAL_BUILD -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -DNO_UNWIND_TABLES -D_GNU_SOURCE -DCR_CLANG_REVISION=\"llvmorg-20-init-6794-g3dbd929e-1\" -D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE -D_LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS -D_LIBCXXABI_DISABLE_VISIBILITY_ANNOTATIONS -DCR_LIBCXX_REVISION=6a68fd412b9aecd515a20a7cf84d11b598bfaf96 -DTEMP_REBUILD_HACK -DCR_SYSROOT_KEY=20230611T210420Z-2 -DNDEBUG -DNVALGRIND -DDYNAMIC_ANNOTATIONS_ENABLED=0 -DBLINK_CORE_IMPLEMENTATION=1 -DBLINK_IMPLEMENTATION=1 -DINSIDE_BLINK -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_56 -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_56 -DCHROMIUM -DLIBYUV_DISABLE_NEON -DLIBYUV_DISABLE_SVE -DLIBYUV_DISABLE_SME -DLIBYUV_DISABLE_LSX -DLIBYUV_DISABLE_LASX -DSK_ENABLE_SKSL -DSK_UNTIL_CRBUG_1187654_IS_FIXED -DSK_USER_CONFIG_HEADER=\"../../skia/config/SkUserConfig.h\" -DSK_WIN_FONTMGR_NO_SIMULATIONS -DSK_DISABLE_LEGACY_INIT_DECODERS -DSK_DISABLE_LEGACY_BACKEND_TEXTURE_FUNCS -DSK_DISABLE_LEGACY_TEXTURE_INFO_FUNCS -DSK_DISABLE_LEGACY_BACKEND_SEMAPHORE_FUNCS -DSK_DISABLE_LEGACY_GRAPHITE_IMAGES -DSK_DISABLE_LEGACY_DAWN_TEXTURE_INFO_FUNCS -DSK_DISABLE_LEGACY_DAWN_BACKEND_TEXTURE_FUNCS -DSK_CODEC_DECODES_JPEG -DSK_ENCODE_JPEG -DSK_ENCODE_PNG -DSK_ENCODE_WEBP -DSK_GANESH -DSK_GPU_WORKAROUNDS_HEADER=\"gpu/config/gpu_driver_bug_workaround_autogen.h\" -DSK_GL -DSK_VULKAN=1 -DSK_GRAPHITE -DSK_DAWN -DVK_USE_PLATFORM_XCB_KHR -DVK_USE_PLATFORM_WAYLAND_KHR -DGOOGLE_PROTOBUF_NO_RTTI -DGOOGLE_PROTOBUF_NO_STATIC_INITIALIZER -DGOOGLE_PROTOBUF_INTERNAL_DONATE_STEAL_INLINE=0 -DHAVE_PTHREAD -DCR_CXX_INCLUDE=\"third_party/rust/chromium_crates_io/vendor/cxx-1.0.128/include/cxx.h\" -DU_USING_ICU_NAMESPACE=0 -DU_ENABLE_DYLOAD=0 -DUSE_CHROMIUM_ICU=1 -DU_ENABLE_TRACING=1 -DU_ENABLE_RESOURCE_TRACING=0 -DU_STATIC_IMPLEMENTATION -DICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE -DWEBRTC_ENABLE_AVX2 -DWEBRTC_CHROMIUM_BUILD -DWEBRTC_POSIX -DWEBRTC_LINUX -DABSL_ALLOCATOR_NOTHROW=1 -DWEBRTC_USE_X11 -DWEBRTC_USE_PIPEWIRE -DWEBRTC_USE_GIO -DLOGGING_INSIDE_WEBRTC -DV8_ARRAY_BUFFER_INTERNAL_FIELD_COUNT=0 -DV8_ARRAY_BUFFER_VIEW_INTERNAL_FIELD_COUNT=0 -DV8_PROMISE_INTERNAL_FIELD_COUNT=0 -DV8_COMPRESS_POINTERS -DV8_COMPRESS_POINTERS_IN_SHARED_CAGE -DV8_31BIT_SMIS_ON_64BIT_ARCH -DV8_ENABLE_SANDBOX -DV8_DEPRECATION_WARNINGS -DV8_USE_PERFETTO -DV8_HAVE_TARGET_OS -DV8_TARGET_OS_LINUX -DCPPGC_CAGED_HEAP -DCPPGC_YOUNG_GENERATION -DCPPGC_POINTER_COMPRESSION -DCPPGC_ENABLE_LARGER_CAGE -DCPPGC_SLIM_WRITE_BARRIER -DLEVELDB_PLATFORM_CHROMIUM=1 -DCRASHPAD_ZLIB_SOURCE_EXTERNAL -DWTF_USE_WEBAUDIO_PFFFT=1 -DUSE_LIBJPEG_TURBO=1 -DMANGLE_JPEG_NAMES -DWEBP_EXTERN=extern -DLIBXSLT_STATIC -I../.. -Igen -I../../buildtools/third_party/libc++ -I../../third_party/perfetto/include -Igen/third_party/perfetto/build_config -Igen/third_party/perfetto -I../../net/third_party/quiche/overrides -I../../net/third_party/quiche/src/quiche/common/platform/default -I../../net/third_party/quiche/src -I../../third_party/libyuv/include -I../../third_party/skia -Igen/third_party/skia -I../../third_party/wuffs/src/release/c -I../../third_party/vulkan/include -I../../third_party/vulkan-headers/src/include -I../../third_party/wayland/src/src -I../../third_party/wayland/include/src -Igen/third_party/dawn/include -I../../third_party/dawn/include -I../../third_party/khronos -I../../gpu -I../../third_party/protobuf/src -Igen/protoc_out -I../../base/allocator/partition_allocator/src -Igen/base/allocator/partition_allocator/src -I../../third_party/abseil-cpp -I../../third_party/boringssl/src/include -I../../third_party/ipcz/include -I../../third_party/ced/src -I../../third_party/icu/source/common -I../../third_party/icu/source/i18n -Igen/net/third_party/quiche/src -I../../third_party/webrtc_overrides -I../../third_party/webrtc -Igen/third_party/webrtc -I../../v8/include -I../../third_party/libwebm/source -I../../third_party/angle/include -I../../third_party/mesa_headers -I../../third_party/leveldatabase -I../../third_party/leveldatabase/src -I../../third_party/leveldatabase/src/include -I../../third_party/crashpad/crashpad -I../../third_party/crashpad/crashpad/compat/linux -I../../third_party/crashpad/crashpad/compat/non_win -I../../third_party/zlib -I../../third_party/libaom/source/libaom -I../../third_party/libaom/source/config/linux/x64 -I../../third_party/libjpeg_turbo -I../../third_party/libpng -I../../third_party/libwebp/src/src -I../../third_party/ots/src/include -Igen/v8/include -I../../third_party/fp16/src/include -I../../third_party/libxml/src/include -I../../third_party/libxml/linux/include -I../../third_party/libxslt/src -Wall -Wextra -Wimplicit-fallthrough -Wextra-semi -Wunreachable-code-aggressive -Wthread-safety -Wno-missing-field-initializers -Wno-unused-parameter -Wno-psabi -Wloop-analysis -Wno-unneeded-internal-declaration -Wno-cast-function-type -Wno-thread-safety-reference-return -Wshadow -fno-delete-null-pointer-checks -fno-ident -fno-strict-aliasing -fstack-protector -fno-unwind-tables -fno-asynchronous-unwind-tables -fPIC -pthread -fcolor-diagnostics -fmerge-all-constants -fno-sized-deallocation -fcrash-diagnostics-dir=../../tools/clang/crashreports -mllvm -instcombine-lower-dbg-declare=0 -mllvm -split-threshold-for-reg-with-hint=0 -ffp-contract=off -flto=thin -fsplit-lto-unit -mllvm -inlinehint-threshold=360 -fwhole-program-vtables -fcomplete-member-pointers -m64 -msse3 -ffile-compilation-dir=. -no-canonical-prefixes -ftrivial-auto-var-init=pattern -fno-omit-frame-pointer -fsanitize=cfi-vcall -fsanitize-ignorelist=../../tools/cfi/ignores.txt -fsanitize=cfi-icall -fvisibility=hidden -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare -Xclang -add-plugin -Xclang find-bad-constructs -Xclang -plugin-arg-find-bad-constructs -Xclang span-ctor-from-string-literal -Xclang -plugin-arg-find-bad-constructs -Xclang raw-ref-template-as-trivial-member -Xclang -plugin-arg-find-bad-constructs -Xclang raw-span-template-as-trivial-member -Xclang -plugin-arg-find-bad-constructs -Xclang check-stack-allocated -Xclang -plugin-arg-find-bad-constructs -Xclang check-ipc -Xclang -add-plugin -Xclang raw-ptr-plugin -Xclang -plugin-arg-raw-ptr-plugin -Xclang check-raw-ptr-to-stack-allocated -Xclang -plugin-arg-raw-ptr-plugin -Xclang disable-check-raw-ptr-to-stack-allocated-error -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../third_party/dawn/ -DUNSAFE_BUFFERS_BUILD -Xclang -add-plugin -Xclang unsafe-buffers -Xclang -plugin-arg-unsafe-buffers -Xclang ../../build/config/unsafe_buffers_paths.txt -Xclang -plugin-arg-find-bad-constructs -Xclang check-blink-data-member-type -Xclang -add-plugin -Xclang blink-gc-plugin -Wexit-time-destructors -Wglobal-constructors -Xclang -plugin-arg-find-bad-constructs -Xclang check-layout-object-methods -O2 -fdata-sections -ffunction-sections -fno-unique-section-names -fno-math-errno -g0 -Wconversion -Wno-float-conversion -Wno-sign-conversion -Wno-implicit-float-conversion -Wno-implicit-int-conversion -isystem../../build/linux/debian_bullseye_amd64-sysroot/usr/include/glib-2.0 -isystem../../build/linux/debian_bullseye_amd64-sysroot/usr/lib/x86_64-linux-gnu/glib-2.0/include -Wno-redundant-parens -Wno-redundant-parens -DPROTOBUF_ALLOW_DEPRECATED=1 -isystem../../build/linux/debian_bullseye_amd64-sysroot/usr/include/nss -isystem../../build/linux/debian_bullseye_amd64-sysroot/usr/include/nspr -isystem../../build/linux/debian_bullseye_amd64-sysroot/usr/include/dbus-1.0 -isystem../../build/linux/debian_bullseye_amd64-sysroot/usr/lib/x86_64-linux-gnu/dbus-1.0/include -DLIBXML_STATIC= -Wno-invalid-offsetof -Wenum-compare-conditional -Wno-c++11-narrowing-const-reference -Wno-missing-template-arg-list-after-template-kw -Wno-dangling-assignment-gsl -std=c++20 -Wno-trigraphs -gsimple-template-names -fno-exceptions -fno-rtti -nostdinc++ -isystem../../third_party/libc++/src/include -isystem../../third_party/libc++abi/src/include --sysroot=../../build/linux/debian_bullseye_amd64-sysroot -fvisibility-inlines-hidden -c gen/third_party/blink/renderer/core/css_value_keywords.cc -o obj/third_party/blink/renderer/core/core_generated/css_value_keywords.o
+gen/third_party/blink/renderer/core/css_value_keywords.cc:2469:7: error: fallthrough annotation does not directly precede switch label
+ 2469 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css_value_keywords.cc:2445:7: error: fallthrough annotation does not directly precede switch label
+ 2445 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css_value_keywords.cc:2421:7: error: fallthrough annotation does not directly precede switch label
+ 2421 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css_value_keywords.cc:2493:7: error: fallthrough annotation does not directly precede switch label
+ 2493 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css_value_keywords.cc:2237:7: error: fallthrough annotation does not directly precede switch label
+ 2237 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css_value_keywords.cc:2309:7: error: fallthrough annotation does not directly precede switch label
+ 2309 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css_value_keywords.cc:2397:7: error: fallthrough annotation does not directly precede switch label
+ 2397 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css_value_keywords.cc:2333:7: error: fallthrough annotation does not directly precede switch label
+ 2333 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css_value_keywords.cc:2517:7: error: fallthrough annotation does not directly precede switch label
+ 2517 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css_value_keywords.cc:2301:7: error: fallthrough annotation does not directly precede switch label
+ 2301 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css_value_keywords.cc:2325:7: error: fallthrough annotation does not directly precede switch label
+ 2325 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css_value_keywords.cc:2541:7: error: fallthrough annotation does not directly precede switch label
+ 2541 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css_value_keywords.cc:2461:7: error: fallthrough annotation does not directly precede switch label
+ 2461 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css_value_keywords.cc:2373:7: error: fallthrough annotation does not directly precede switch label
+ 2373 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css_value_keywords.cc:2285:7: error: fallthrough annotation does not directly precede switch label
+ 2285 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css_value_keywords.cc:2413:7: error: fallthrough annotation does not directly precede switch label
+ 2413 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css_value_keywords.cc:2477:7: error: fallthrough annotation does not directly precede switch label
+ 2477 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css_value_keywords.cc:2261:7: error: fallthrough annotation does not directly precede switch label
+ 2261 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css_value_keywords.cc:2349:7: error: fallthrough annotation does not directly precede switch label
+ 2349 |       [[fallthrough]];
+      |       ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+[510/1419] CXX obj/third_party/blink/r...ore/core_generated/css_property_names.o
+FAILED: [code=1] obj/third_party/blink/renderer/core/core_generated/css_property_names.o 
+../../third_party/llvm-build/Release+Asserts/bin/clang++ -MMD -MF obj/third_party/blink/renderer/core/core_generated/css_property_names.o.d -DUSE_UDEV -DUSE_AURA=1 -DUSE_GLIB=1 -DUSE_OZONE=1 -DOFFICIAL_BUILD -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -DNO_UNWIND_TABLES -D_GNU_SOURCE -DCR_CLANG_REVISION=\"llvmorg-20-init-6794-g3dbd929e-1\" -D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE -D_LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS -D_LIBCXXABI_DISABLE_VISIBILITY_ANNOTATIONS -DCR_LIBCXX_REVISION=6a68fd412b9aecd515a20a7cf84d11b598bfaf96 -DTEMP_REBUILD_HACK -DCR_SYSROOT_KEY=20230611T210420Z-2 -DNDEBUG -DNVALGRIND -DDYNAMIC_ANNOTATIONS_ENABLED=0 -DBLINK_CORE_IMPLEMENTATION=1 -DBLINK_IMPLEMENTATION=1 -DINSIDE_BLINK -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_56 -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_56 -DCHROMIUM -DLIBYUV_DISABLE_NEON -DLIBYUV_DISABLE_SVE -DLIBYUV_DISABLE_SME -DLIBYUV_DISABLE_LSX -DLIBYUV_DISABLE_LASX -DSK_ENABLE_SKSL -DSK_UNTIL_CRBUG_1187654_IS_FIXED -DSK_USER_CONFIG_HEADER=\"../../skia/config/SkUserConfig.h\" -DSK_WIN_FONTMGR_NO_SIMULATIONS -DSK_DISABLE_LEGACY_INIT_DECODERS -DSK_DISABLE_LEGACY_BACKEND_TEXTURE_FUNCS -DSK_DISABLE_LEGACY_TEXTURE_INFO_FUNCS -DSK_DISABLE_LEGACY_BACKEND_SEMAPHORE_FUNCS -DSK_DISABLE_LEGACY_GRAPHITE_IMAGES -DSK_DISABLE_LEGACY_DAWN_TEXTURE_INFO_FUNCS -DSK_DISABLE_LEGACY_DAWN_BACKEND_TEXTURE_FUNCS -DSK_CODEC_DECODES_JPEG -DSK_ENCODE_JPEG -DSK_ENCODE_PNG -DSK_ENCODE_WEBP -DSK_GANESH -DSK_GPU_WORKAROUNDS_HEADER=\"gpu/config/gpu_driver_bug_workaround_autogen.h\" -DSK_GL -DSK_VULKAN=1 -DSK_GRAPHITE -DSK_DAWN -DVK_USE_PLATFORM_XCB_KHR -DVK_USE_PLATFORM_WAYLAND_KHR -DGOOGLE_PROTOBUF_NO_RTTI -DGOOGLE_PROTOBUF_NO_STATIC_INITIALIZER -DGOOGLE_PROTOBUF_INTERNAL_DONATE_STEAL_INLINE=0 -DHAVE_PTHREAD -DCR_CXX_INCLUDE=\"third_party/rust/chromium_crates_io/vendor/cxx-1.0.128/include/cxx.h\" -DU_USING_ICU_NAMESPACE=0 -DU_ENABLE_DYLOAD=0 -DUSE_CHROMIUM_ICU=1 -DU_ENABLE_TRACING=1 -DU_ENABLE_RESOURCE_TRACING=0 -DU_STATIC_IMPLEMENTATION -DICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE -DWEBRTC_ENABLE_AVX2 -DWEBRTC_CHROMIUM_BUILD -DWEBRTC_POSIX -DWEBRTC_LINUX -DABSL_ALLOCATOR_NOTHROW=1 -DWEBRTC_USE_X11 -DWEBRTC_USE_PIPEWIRE -DWEBRTC_USE_GIO -DLOGGING_INSIDE_WEBRTC -DV8_ARRAY_BUFFER_INTERNAL_FIELD_COUNT=0 -DV8_ARRAY_BUFFER_VIEW_INTERNAL_FIELD_COUNT=0 -DV8_PROMISE_INTERNAL_FIELD_COUNT=0 -DV8_COMPRESS_POINTERS -DV8_COMPRESS_POINTERS_IN_SHARED_CAGE -DV8_31BIT_SMIS_ON_64BIT_ARCH -DV8_ENABLE_SANDBOX -DV8_DEPRECATION_WARNINGS -DV8_USE_PERFETTO -DV8_HAVE_TARGET_OS -DV8_TARGET_OS_LINUX -DCPPGC_CAGED_HEAP -DCPPGC_YOUNG_GENERATION -DCPPGC_POINTER_COMPRESSION -DCPPGC_ENABLE_LARGER_CAGE -DCPPGC_SLIM_WRITE_BARRIER -DLEVELDB_PLATFORM_CHROMIUM=1 -DCRASHPAD_ZLIB_SOURCE_EXTERNAL -DWTF_USE_WEBAUDIO_PFFFT=1 -DUSE_LIBJPEG_TURBO=1 -DMANGLE_JPEG_NAMES -DWEBP_EXTERN=extern -DLIBXSLT_STATIC -I../.. -Igen -I../../buildtools/third_party/libc++ -I../../third_party/perfetto/include -Igen/third_party/perfetto/build_config -Igen/third_party/perfetto -I../../net/third_party/quiche/overrides -I../../net/third_party/quiche/src/quiche/common/platform/default -I../../net/third_party/quiche/src -I../../third_party/libyuv/include -I../../third_party/skia -Igen/third_party/skia -I../../third_party/wuffs/src/release/c -I../../third_party/vulkan/include -I../../third_party/vulkan-headers/src/include -I../../third_party/wayland/src/src -I../../third_party/wayland/include/src -Igen/third_party/dawn/include -I../../third_party/dawn/include -I../../third_party/khronos -I../../gpu -I../../third_party/protobuf/src -Igen/protoc_out -I../../base/allocator/partition_allocator/src -Igen/base/allocator/partition_allocator/src -I../../third_party/abseil-cpp -I../../third_party/boringssl/src/include -I../../third_party/ipcz/include -I../../third_party/ced/src -I../../third_party/icu/source/common -I../../third_party/icu/source/i18n -Igen/net/third_party/quiche/src -I../../third_party/webrtc_overrides -I../../third_party/webrtc -Igen/third_party/webrtc -I../../v8/include -I../../third_party/libwebm/source -I../../third_party/angle/include -I../../third_party/mesa_headers -I../../third_party/leveldatabase -I../../third_party/leveldatabase/src -I../../third_party/leveldatabase/src/include -I../../third_party/crashpad/crashpad -I../../third_party/crashpad/crashpad/compat/linux -I../../third_party/crashpad/crashpad/compat/non_win -I../../third_party/zlib -I../../third_party/libaom/source/libaom -I../../third_party/libaom/source/config/linux/x64 -I../../third_party/libjpeg_turbo -I../../third_party/libpng -I../../third_party/libwebp/src/src -I../../third_party/ots/src/include -Igen/v8/include -I../../third_party/fp16/src/include -I../../third_party/libxml/src/include -I../../third_party/libxml/linux/include -I../../third_party/libxslt/src -Wall -Wextra -Wimplicit-fallthrough -Wextra-semi -Wunreachable-code-aggressive -Wthread-safety -Wno-missing-field-initializers -Wno-unused-parameter -Wno-psabi -Wloop-analysis -Wno-unneeded-internal-declaration -Wno-cast-function-type -Wno-thread-safety-reference-return -Wshadow -fno-delete-null-pointer-checks -fno-ident -fno-strict-aliasing -fstack-protector -fno-unwind-tables -fno-asynchronous-unwind-tables -fPIC -pthread -fcolor-diagnostics -fmerge-all-constants -fno-sized-deallocation -fcrash-diagnostics-dir=../../tools/clang/crashreports -mllvm -instcombine-lower-dbg-declare=0 -mllvm -split-threshold-for-reg-with-hint=0 -ffp-contract=off -flto=thin -fsplit-lto-unit -mllvm -inlinehint-threshold=360 -fwhole-program-vtables -fcomplete-member-pointers -m64 -msse3 -ffile-compilation-dir=. -no-canonical-prefixes -ftrivial-auto-var-init=pattern -fno-omit-frame-pointer -fsanitize=cfi-vcall -fsanitize-ignorelist=../../tools/cfi/ignores.txt -fsanitize=cfi-icall -fvisibility=hidden -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare -Xclang -add-plugin -Xclang find-bad-constructs -Xclang -plugin-arg-find-bad-constructs -Xclang span-ctor-from-string-literal -Xclang -plugin-arg-find-bad-constructs -Xclang raw-ref-template-as-trivial-member -Xclang -plugin-arg-find-bad-constructs -Xclang raw-span-template-as-trivial-member -Xclang -plugin-arg-find-bad-constructs -Xclang check-stack-allocated -Xclang -plugin-arg-find-bad-constructs -Xclang check-ipc -Xclang -add-plugin -Xclang raw-ptr-plugin -Xclang -plugin-arg-raw-ptr-plugin -Xclang check-raw-ptr-to-stack-allocated -Xclang -plugin-arg-raw-ptr-plugin -Xclang disable-check-raw-ptr-to-stack-allocated-error -Xclang -plugin-arg-raw-ptr-plugin -Xclang raw-ptr-exclude-path=../../third_party/dawn/ -DUNSAFE_BUFFERS_BUILD -Xclang -add-plugin -Xclang unsafe-buffers -Xclang -plugin-arg-unsafe-buffers -Xclang ../../build/config/unsafe_buffers_paths.txt -Xclang -plugin-arg-find-bad-constructs -Xclang check-blink-data-member-type -Xclang -add-plugin -Xclang blink-gc-plugin -Wexit-time-destructors -Wglobal-constructors -Xclang -plugin-arg-find-bad-constructs -Xclang check-layout-object-methods -O2 -fdata-sections -ffunction-sections -fno-unique-section-names -fno-math-errno -g0 -Wconversion -Wno-float-conversion -Wno-sign-conversion -Wno-implicit-float-conversion -Wno-implicit-int-conversion -isystem../../build/linux/debian_bullseye_amd64-sysroot/usr/include/glib-2.0 -isystem../../build/linux/debian_bullseye_amd64-sysroot/usr/lib/x86_64-linux-gnu/glib-2.0/include -Wno-redundant-parens -Wno-redundant-parens -DPROTOBUF_ALLOW_DEPRECATED=1 -isystem../../build/linux/debian_bullseye_amd64-sysroot/usr/include/nss -isystem../../build/linux/debian_bullseye_amd64-sysroot/usr/include/nspr -isystem../../build/linux/debian_bullseye_amd64-sysroot/usr/include/dbus-1.0 -isystem../../build/linux/debian_bullseye_amd64-sysroot/usr/lib/x86_64-linux-gnu/dbus-1.0/include -DLIBXML_STATIC= -Wno-invalid-offsetof -Wenum-compare-conditional -Wno-c++11-narrowing-const-reference -Wno-missing-template-arg-list-after-template-kw -Wno-dangling-assignment-gsl -std=c++20 -Wno-trigraphs -gsimple-template-names -fno-exceptions -fno-rtti -nostdinc++ -isystem../../third_party/libc++/src/include -isystem../../third_party/libc++abi/src/include --sysroot=../../build/linux/debian_bullseye_amd64-sysroot -fvisibility-inlines-hidden -c gen/third_party/blink/renderer/core/css/css_property_names.cc -o obj/third_party/blink/renderer/core/core_generated/css_property_names.o
+gen/third_party/blink/renderer/core/css/css_property_names.cc:298:7: error: fallthrough annotation does not directly precede switch label
+  298 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/css_property_names.cc:354:7: error: fallthrough annotation does not directly precede switch label
+  354 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/css_property_names.cc:250:7: error: fallthrough annotation does not directly precede switch label
+  250 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/css_property_names.cc:434:7: error: fallthrough annotation does not directly precede switch label
+  434 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/css_property_names.cc:370:7: error: fallthrough annotation does not directly precede switch label
+  370 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/css_property_names.cc:186:7: error: fallthrough annotation does not directly precede switch label
+  186 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/css_property_names.cc:154:7: error: fallthrough annotation does not directly precede switch label
+  154 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/css_property_names.cc:274:7: error: fallthrough annotation does not directly precede switch label
+  274 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/css_property_names.cc:338:7: error: fallthrough annotation does not directly precede switch label
+  338 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/css_property_names.cc:234:7: error: fallthrough annotation does not directly precede switch label
+  234 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/css_property_names.cc:130:7: error: fallthrough annotation does not directly precede switch label
+  130 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/css_property_names.cc:210:7: error: fallthrough annotation does not directly precede switch label
+  210 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/css_property_names.cc:106:7: error: fallthrough annotation does not directly precede switch label
+  106 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/css_property_names.cc:394:7: error: fallthrough annotation does not directly precede switch label
+  394 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/css_property_names.cc:362:7: error: fallthrough annotation does not directly precede switch label
+  362 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/css_property_names.cc:282:7: error: fallthrough annotation does not directly precede switch label
+  282 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/css_property_names.cc:346:7: error: fallthrough annotation does not directly precede switch label
+  346 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/css_property_names.cc:410:7: error: fallthrough annotation does not directly precede switch label
+  410 |       [[fallthrough]];
+      |       ^
+gen/third_party/blink/renderer/core/css/css_property_names.cc:386:7: error: fallthrough annotation does not directly precede switch label
+  386 |       [[fallthrough]];
+      |       ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+[512/1419] CXX obj/components/policy/c...ser/internal/browser_policy_connector.o
+ninja: build stopped: subcommand failed.
