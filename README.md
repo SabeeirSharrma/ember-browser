@@ -36,6 +36,9 @@ Ember Browser
 ### Build
 
 ```bash
+# Clone repo
+git clone https://github.com/SabeeirSharrma/ember-browser.git
+
 # Fetch Chromium source (~30 min)
 ./build.sh --fetch
 
